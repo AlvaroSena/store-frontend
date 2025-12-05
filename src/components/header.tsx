@@ -79,30 +79,18 @@ export function Header({ enableTransition }: HeaderProps) {
           </a>
         </nav>
 
-        <a
-          href="/"
-          className="text-2xl text-primary transition-all hover:opacity-70"
-        >
+        <a href="/" className="text-2xl transition-all hover:opacity-70">
           release
         </a>
 
         <div className="flex flex-row items-center justify-end gap-4 w-20 lg:w-80">
-          <a
-            href="/cart"
-            className="text-primary transition-all hover:opacity-70"
-          >
+          <a href="/cart" className="transition-all hover:opacity-70">
             <Search size={18} strokeWidth={1.5} />
           </a>
-          <a
-            href="/cart"
-            className="text-primary transition-all hover:opacity-70"
-          >
+          <a href="/cart" className="transition-all hover:opacity-70">
             <UserRound size={18} strokeWidth={1.5} />
           </a>
-          <a
-            href="/cart"
-            className="text-primary transition-all hover:opacity-70"
-          >
+          <a href="/cart" className="transition-all hover:opacity-70">
             <ShoppingBag size={18} strokeWidth={1.5} />
           </a>
         </div>
