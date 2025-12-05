@@ -79,10 +79,9 @@ export function OfferBanner() {
           </div>
           <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
             <div className="space-y-0.5">
-              <p className="font-medium text-sm">Black Friday Sale!</p>
+              <p className="font-medium text-sm">Promoção Black Friday!</p>
               <p className="text-muted-foreground text-sm">
-                It kicks off today and is available for just 24
-                hours—don&lsquo;t miss out!
+                Começa hoje e está disponível por apenas 24 horas—não perca!
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">

@@ -1,5 +1,3 @@
-"use client";
-
 import { CreditCardIcon, StoreIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
