@@ -3,6 +3,7 @@ import { UserRound } from "lucide-react";
 import { CartSheet } from "./cart-sheet";
 import { useScroll } from "@/hooks/useScroll";
 import { SearchSheet } from "./search-sheet";
+import { NavMenu } from "./nav-menu";
 
 interface HeaderProps {
   enableTransition?: boolean;
@@ -34,6 +35,8 @@ export function Header({ enableTransition }: HeaderProps) {
             }`}
           />
         </button>
+
+        {open && <NavMenu open={open} />}
 
         <nav className="hidden md:flex flex-row items-center gap-4 text-sm w-80">
           <a
