@@ -85,7 +85,7 @@ export function OfferBanner() {
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">
-              <div className="flex items-center divide-x divide-primary-foreground rounded-md bg-primary/15 text-sm tabular-nums">
+              <div className="flex items-center divide-x divide-primary-foreground rounded-full bg-primary/15 text-sm tabular-nums">
                 {timeLeft.days > 0 && (
                   <span className="flex h-8 items-center justify-center p-2">
                     {timeLeft.days}
@@ -105,7 +105,7 @@ export function OfferBanner() {
                   <span className="text-muted-foreground">s</span>
                 </span>
               </div>
-              <Button className="text-sm" size="sm">
+              <Button size="sm" className="text-xs rounded-full">
                 Compre agora
               </Button>
             </div>
