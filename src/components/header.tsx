@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Search, ShoppingBag, UserRound } from "lucide-react";
-import { CartDrawer } from "./cart-drawer";
 
-export function Header() {
+interface HeaderProps {
+  enableTransition?: boolean;
+}
+
+export function Header({ enableTransition }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -17,9 +20,9 @@ export function Header() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-30 h-20 transition-colors duration-300 ${scrolled ? "bg-white text-foreground" : "bg-neutral-900 text-white"}`}
+      className={`shadow-sm w-full sticky top-0 z-30 h-20 transition-colors duration-300 ${scrolled ? "bg-white text-foreground" : enableTransition ? "bg-neutral-900 text-white" : "bg-white text-foreground"}`}
     >
-      <div className="max-w-[1120px] px-4 mx-auto h-20 flex items-center justify-between">
+      <div className="px-4 mx-auto h-20 flex items-center justify-between">
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden relative w-8 h-8 flex items-center justify-center group"
@@ -39,10 +42,10 @@ export function Header() {
 
         <nav className="hidden md:flex flex-row items-center gap-4 text-sm w-80">
           <a
-            href=""
+            href="/"
             className={`relative inline-block
                            before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                           before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
+                           before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : enableTransition ? "before:bg-white" : "before:bg-neutral-900"} before:transition-transform before:duration-270
                            hover:before:scale-x-100`}
           >
             INÍCIO
@@ -50,61 +53,55 @@ export function Header() {
           <a
             href=""
             className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+                           before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
+                           before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : enableTransition ? "before:bg-white" : "before:bg-neutral-900"} before:transition-transform before:duration-270
+                           hover:before:scale-x-100`}
           >
             SHOP
           </a>
           <a
             href=""
             className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+                           before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
+                           before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : enableTransition ? "before:bg-white" : "before:bg-neutral-900"} before:transition-transform before:duration-270
+                           hover:before:scale-x-100`}
           >
             DESTAQUES
           </a>
           <a
             href=""
             className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+                           before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
+                           before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : enableTransition ? "before:bg-white" : "before:bg-neutral-900"} before:transition-transform before:duration-270
+                           hover:before:scale-x-100`}
           >
             CONTATO
           </a>
         </nav>
 
-        <a href="/" className="text-2xl">
+        <a
+          href="/"
+          className="text-2xl text-primary transition-all hover:opacity-70"
+        >
           release
         </a>
 
-        <div className="flex flex-row items-center justify-center gap-4 w-20 lg:w-80">
+        <div className="flex flex-row items-center justify-end gap-4 w-20 lg:w-80">
           <a
             href="/cart"
-            className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+            className="text-primary transition-all hover:opacity-70"
           >
             <Search size={18} strokeWidth={1.5} />
           </a>
           <a
             href="/cart"
-            className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+            className="text-primary transition-all hover:opacity-70"
           >
             <UserRound size={18} strokeWidth={1.5} />
           </a>
           <a
             href="/cart"
-            className={`relative inline-block
-                         before:absolute before:bottom-0 before:left-0 before:h-px before:w-full
-                         before:origin-left before:scale-x-0 ${scrolled ? "before:bg-neutral-900" : "before:bg-white"} before:transition-transform before:duration-270
-                         hover:before:scale-x-100`}
+            className="text-primary transition-all hover:opacity-70"
           >
             <ShoppingBag size={18} strokeWidth={1.5} />
           </a>

@@ -1,6 +1,6 @@
 export function ProductCard() {
   return (
-    <div className="group w-80 cursor-pointer">
+    <a href="/products" className="block group w-80 cursor-pointer">
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
           src="https://release-main.myshopify.com/cdn/shop/files/Greenlongwoolcoat-4.jpg?v=1709375742&width=1280"
@@ -20,6 +20,6 @@ export function ProductCard() {
           <span className="text-xs text-primary">R$ 80,00</span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }

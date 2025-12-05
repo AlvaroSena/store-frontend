@@ -1,4 +1,4 @@
-import { TicketPercent, XIcon } from "lucide-react";
+import { TicketPercent } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,7 @@ interface TimeLeft {
 }
 
 export function OfferBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
