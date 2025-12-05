@@ -5,6 +5,7 @@
 
 @theme {
   --font-sans: "Poppins", sans-serif;
+  --font-secondary: "Cormorant", sans-serif;
 }
 
 @theme inline {

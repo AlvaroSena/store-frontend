@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Search, ShoppingBag, UserRound } from "lucide-react";
+import { CartDrawer } from "./cart-drawer";
 
 export function Header() {
   const [open, setOpen] = useState(false);
