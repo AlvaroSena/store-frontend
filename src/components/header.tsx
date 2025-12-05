@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search, UserRound } from "lucide-react";
 import { CartSheet } from "./cart-sheet";
+import { useScroll } from "@/hooks/useScroll";
 
 interface HeaderProps {
   enableTransition?: boolean;
 }
 
 export function Header({ enableTransition }: HeaderProps) {
+  const scrolled = useScroll();
+
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header
-      className={`shadow-sm w-full sticky top-0 z-30 h-20 transition-colors duration-300 ${scrolled ? "bg-white text-foreground" : enableTransition ? "bg-neutral-900 text-white" : "bg-white text-foreground"}`}
+      className={`shadow-sm w-full sticky top-0 z-30 h-20 transition-colors duration-300 text-accent ${scrolled ? "bg-background text-foreground" : enableTransition ? "bg-foreground/95" : "bg-background text-foreground"}`}
     >
       <div className="px-4 mx-auto h-20 flex items-center justify-between">
         <button

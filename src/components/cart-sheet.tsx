@@ -18,10 +18,7 @@ export function CartSheet() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button
-          variant="link"
-          className="p-0 m-0 transition-all hover:opacity-70"
-        >
+        <Button variant="link" className="text-text p-0 m-0 hover:opacity-70">
           <ShoppingBag size={18} strokeWidth={1.5} />
         </Button>
       </SheetTrigger>
