@@ -24,13 +24,13 @@ export function Header({ enableTransition }: HeaderProps) {
           className="md:hidden relative w-8 h-8 flex items-center justify-center group"
         >
           <span
-            className={`absolute h-0.5 w-6 ${scrolled ? "bg-neutral-900" : "bg-white"} rounded transition-all duration-300 ${
+            className={`absolute h-0.5 w-6 ${scrolled ? "bg-foreground" : enableTransition ? "bg-background" : "bg-foreground"} rounded transition-all duration-300 ${
               open ? "rotate-45 translate-y-0" : "-translate-y-1.5"
             }`}
           />
 
           <span
-            className={`absolute h-0.5 w-6 ${scrolled ? "bg-neutral-900" : "bg-white"} rounded transition-all duration-300 ${
+            className={`absolute h-0.5 w-6 ${scrolled ? "bg-foreground" : enableTransition ? "bg-background" : "bg-foreground"} rounded transition-all duration-300 ${
               open ? "-rotate-45 translate-y-0" : "translate-y-1.5"
             }`}
           />
