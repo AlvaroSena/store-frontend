@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Search, ShoppingBag, UserRound } from "lucide-react";
+import { Search, UserRound } from "lucide-react";
+import { CartSheet } from "./cart-sheet";
 
 interface HeaderProps {
   enableTransition?: boolean;
@@ -90,9 +91,10 @@ export function Header({ enableTransition }: HeaderProps) {
           <a href="/cart" className="transition-all hover:opacity-70">
             <UserRound size={18} strokeWidth={1.5} />
           </a>
-          <a href="/cart" className="transition-all hover:opacity-70">
+          <CartSheet />
+          {/*<a href="/cart" className="transition-all hover:opacity-70">
             <ShoppingBag size={18} strokeWidth={1.5} />
-          </a>
+          </a>*/}
         </div>
       </div>
     </header>
